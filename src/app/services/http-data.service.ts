@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import {Appointment} from '../model/appointment';
 import {catchError, retry} from 'rxjs/operators';
+import {Product} from '../model/product';
 
 @Injectable({
   providedIn: 'root'
@@ -50,6 +51,31 @@ export class HttpDataService {
   // Delete Appointment
   deleteItem(id): Observable<any> {
     return this.http.delete<Appointment>(`${this.basePath}/${id}`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+  // Create Product
+  createItemP(item): Observable<Product> {
+    return this.http.post<Product>(this.basePath, JSON.stringify(item), this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+  // Get Product by Id
+  getItemP(id): Observable<Product> {
+    return this.http.get<Product>(`${this.basePath}/${id}`, this.httpOptions )
+      .pipe(retry(2), catchError(this.handleError));
+  }
+  // Get Product Data
+  getListP(): Observable<Product>{
+    return this.http.get<Product>(this.basePath)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+  // Update Product
+  updateItemP(id, item): Observable<Product>{
+    return this.http.put<Product>(`${this.basePath}/${id}`, JSON.stringify(item), this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+  // Delete Product
+  deleteItemP(id): Observable<any> {
+    return this.http.delete<Product>(`${this.basePath}/${id}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
 }
