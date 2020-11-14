@@ -9,7 +9,7 @@ import {catchError, retry} from 'rxjs/operators';
 })
 export class HttpDataService {
   // Appointment Endpoint
-  basePath = 'http://localhost:3000/appointments';
+  basePath = 'https://cors-anywhere.herokuapp.com/https://protected-hollows-40842.herokuapp.com/api/owners/1/appointments';
   constructor(private http: HttpClient) { }
   // Http Default Options
   httpOptions = {

@@ -44,7 +44,10 @@ export class AppointmentsComponent implements OnInit, AfterViewInit {
   }
   getAllAppointments(): void {
     this.httpDataService.getList().subscribe((response: any) => {
-      this.dataSource.data = response;
+      if (!response){
+        return;
+      }
+      this.dataSource = new MatTableDataSource(response.content);
     });
   }
   editItem(element): void {
