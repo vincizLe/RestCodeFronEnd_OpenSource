@@ -10,7 +10,7 @@ import {Product} from '../model/product';
 })
 export class HttpDataService {
   // Appointment Endpoint
-  basePath = 'https://cors-anywhere.herokuapp.com/https://protected-hollows-40842.herokuapp.com/api/owners/1/appointments';
+  basePath = 'https://cors-anywhere.herokuapp.com/https://protected-hollows-40842.herokuapp.com/api';
   constructor(private http: HttpClient) { }
   // Http Default Options
   httpOptions = {
@@ -40,7 +40,7 @@ export class HttpDataService {
   }
   // Get Appointment Data
   getList(): Observable<Appointment>{
-    return this.http.get<Appointment>(this.basePath)
+    return this.http.get<Appointment>(`${this.basePath}/owners/1/appointments`)
       .pipe(retry(2), catchError(this.handleError));
   }
   // Update Appointment
@@ -65,7 +65,7 @@ export class HttpDataService {
   }
   // Get Product Data
   getListP(): Observable<Product>{
-    return this.http.get<Product>(this.basePath)
+    return this.http.get<Product>(`${this.basePath}/restaurants/1/products`)
       .pipe(retry(2), catchError(this.handleError));
   }
   // Update Product

@@ -41,8 +41,11 @@ export class ProductsComponent implements OnInit, AfterViewInit {
     }
   }
   getAllProducts(): void{
-    this.httpDataService.getList().subscribe((response: any) => {
-      this.dataSource.data = response;
+    this.httpDataService.getListP().subscribe((response: any) => {
+      if (!response){
+        return;
+      }
+      this.dataSource = new MatTableDataSource(response.content);
     });
   }
   editItem(element): void {
