@@ -9,23 +9,24 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppointmentsComponent } from './pages/appointments/appointments.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatTableModule} from '@angular/material/table';
-import {MatIconModule} from '@angular/material/icon';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatNativeDateModule} from '@angular/material/core';
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { HomeComponent } from './pages/home/home.component';
 import { SearchConsultantsComponent } from './pages/search-consultants/search-consultants.component';
 import { SearchComponent } from './pages/search/search.component';
 import { SearchPipe } from './pipes/search.pipe';
-import {NgxPaginationModule} from 'ngx-pagination';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { ProductsComponent } from './pages/products/products.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     HomeComponent,
     SearchConsultantsComponent,
     SearchComponent,
-    SearchPipe
+    SearchPipe,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
