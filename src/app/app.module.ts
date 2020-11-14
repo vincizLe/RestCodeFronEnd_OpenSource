@@ -12,7 +12,7 @@ import { MatCardModule } from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
@@ -21,12 +21,20 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { HomeComponent } from './pages/home/home.component';
+import { SearchConsultantsComponent } from './pages/search-consultants/search-consultants.component';
+import { SearchComponent } from './pages/search/search.component';
+import { SearchPipe } from './pipes/search.pipe';
+import {NgxPaginationModule} from 'ngx-pagination';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppointmentsComponent,
-    HomeComponent
+    HomeComponent,
+    SearchConsultantsComponent,
+    SearchComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
@@ -45,7 +53,10 @@ import { HomeComponent } from './pages/home/home.component';
     MatButtonModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    ReactiveFormsModule,
+    NgxPaginationModule,
+    MatSidenavModule,
   ],
   providers: [
     MatDatepickerModule,

@@ -1,0 +1,24 @@
+<div>
+  <app-search (search)="handleSearch($event)"></app-search>
+</div>
+<mat-drawer-container>
+  <div>
+    <div class="container">
+      <mat-card class="restaurant-card" *ngFor="let restaurant of sourcesRestaurants | search: filtroValor
+        | paginate: {itemsPerPage: 8, currentPage: p}">
+        <mat-card-header>
+          <mat-card-title>{{restaurant.firstName + ' '+ restaurant.lastName}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="https://media-exp1.licdn.com/dms/image/C561BAQFmypa1-92ULQ/company-background_10000/0?e=2159024400&v=beta&t=UuV8rAvMY9gElkONgXkz0MR_wjUKUYzzH-Y638iPHw8">
+        <mat-card-content>
+          <p>{{restaurant.cellphone}}</p>
+          <p>{{restaurant.email}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button> Ver Perfil</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</mat-drawer-container>
