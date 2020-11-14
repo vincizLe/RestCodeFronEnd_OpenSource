@@ -17,9 +17,6 @@
         <mat-form-field>
           <input matInput placeholder="Precio" name="price" type = "number" requiered [(ngModel)]="productData.price">
         </mat-form-field>
-        <mat-form-field>
-          <input matInput placeholder="IdCategoria" name="categoryId" requiered [(ngModel)]="productData.categoryId">
-        </mat-form-field>
         <ng-container *ngIf="isEditMode; else elseTemplate">
           <button mat-button color="primary">Update</button>
           <a mat-button color = "warn" (click) = "cancelEdit()">Cancelar</a>
