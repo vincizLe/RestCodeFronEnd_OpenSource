@@ -1,0 +1,45 @@
+.mat-tab-group {
+  margin-bottom: 48px;
+}
+
+mat-card{
+  margin: auto;
+  max-width:50%;
+  min-width:400px;
+  background: #f8f8f8;
+  margin-top:50px;
+}
+.example-form {
+  min-width: 150px;
+  padding:20px;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+td {
+  padding-right: 8px;
+}
+
+table {
+  width: 100%;
+  background: #f8f8f8;
+  margin-bottom:20px;
+}
+
+button{
+  width:100%;
+}
+
+.texto{
+  width:80%;
+  margin:10%;
+  text-align: center;}
+
+::ng-deep .mat-tab-label {
+  pointer-events: none;
+}
+
+
+

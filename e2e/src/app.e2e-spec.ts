@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', async () => {
     await page.navigateTo();
-    expect(await page.getTitleText()).toEqual('restcode-open-source app is running!');
+    expect(await page.getTitleText()).toEqual('sales app is running!');
   });
 
   afterEach(async () => {

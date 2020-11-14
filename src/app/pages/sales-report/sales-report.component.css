@@ -1,0 +1,30 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
+}
+
+mat-card{
+  margin: auto;
+  max-width:90%;
+  min-width:400px;
+  background: #f8f8f8;
+  margin-top:50px;
+}
+
+table {
+  width: 100%;
+  background: #f8f8f8;
+  margin-bottom:20px;
+}
+
+tr.mat-footer-row {
+  font-weight: bold;
+}

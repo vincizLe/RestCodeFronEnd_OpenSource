@@ -1,15 +1,17 @@
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
-import {Appointment} from '../model/appointment';
+import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
+import {Observable, throwError} from 'rxjs';
+import {Sale} from '../models/sale';
+import {SaleDetail} from '../models/sale-detail';
 import {catchError, retry} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpDataService {
-  // Appointment Endpoint
-  basePath = 'http://localhost:3000/appointments';
+  // Sales Endpoint
+  salePath = 'http://localhost:3000/api/sales';
+  saleDetailsPath = 'http://localhost:3000/api/sale-details';
   constructor(private http: HttpClient) { }
   // Http Default Options
   httpOptions = {
@@ -27,29 +29,56 @@ export class HttpDataService {
     }
     return throwError('Something happened with request, please try again later.');
   }
-  // Create Appointment
-  createItem(item): Observable<Appointment> {
-    return this.http.post<Appointment>(this.basePath, JSON.stringify(item), this.httpOptions)
+  // SALES
+  // Create Sale
+  createSale(item): Observable<Sale> {
+    return this.http.post<Sale>(this.salePath, JSON.stringify(item), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
-  // Get Appointment by Id
-  getItem(id): Observable<Appointment> {
-    return this.http.get<Appointment>(`${this.basePath}/${id}`, this.httpOptions )
+  // Get Sale by Id
+  getSale(id): Observable<Sale> {
+    return this.http.get<Sale>(`${this.salePath}/${id}`, this.httpOptions )
       .pipe(retry(2), catchError(this.handleError));
   }
-  // Get Appointment Data
-  getList(): Observable<Appointment>{
-    return this.http.get<Appointment>(this.basePath)
+  // Get Sale Data
+  getSaleList(): Observable<Sale>{
+    return this.http.get<Sale>(this.salePath)
       .pipe(retry(2), catchError(this.handleError));
   }
-  // Update Appointment
-  updateItem(id, item): Observable<Appointment>{
-    return this.http.put<Appointment>(`${this.basePath}/${id}`, JSON.stringify(item), this.httpOptions)
+  // Update Sale
+  updateSale(id, item): Observable<Sale>{
+    return this.http.put<Sale>(`${this.salePath}/${id}`, JSON.stringify(item), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
-  // Delete Appointment
-  deleteItem(id): Observable<any> {
-    return this.http.delete<Appointment>(`${this.basePath}/${id}`, this.httpOptions)
+  // Delete Sale
+  deleteSale(id): Observable<any> {
+    return this.http.delete<Sale>(`${this.salePath}/${id}`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+  // SALES DETAILS
+  // Create Sale Detail
+  createSaleDetail(item): Observable<SaleDetail> {
+    return this.http.post<SaleDetail>(this.saleDetailsPath, JSON.stringify(item), this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+  // Get Sale Detail by Id
+  getSaleDetail(id): Observable<SaleDetail> {
+    return this.http.get<SaleDetail>(`${this.saleDetailsPath}/${id}`, this.httpOptions )
+      .pipe(retry(2), catchError(this.handleError));
+  }
+  // Get Sale Detail Data
+  getSaleDetailList(): Observable<SaleDetail>{
+    return this.http.get<SaleDetail>(this.saleDetailsPath)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+  // Update Sale Detail
+  updateSaleDetail(id, item): Observable<SaleDetail>{
+    return this.http.put<SaleDetail>(`${this.saleDetailsPath}/${id}`, JSON.stringify(item), this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+  // Delete Sale Detail
+  deleteSaleDetail(id): Observable<any> {
+    return this.http.delete<SaleDetail>(`${this.saleDetailsPath}/${id}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
 }
