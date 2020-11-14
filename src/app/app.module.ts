@@ -20,13 +20,13 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
-import { HomeComponent } from './pages/home/home.component';
+import { HomeOwnerComponent } from './pages/home-owner/home-owner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppointmentsComponent,
-    HomeComponent
+    HomeOwnerComponent
   ],
   imports: [
     BrowserModule,
