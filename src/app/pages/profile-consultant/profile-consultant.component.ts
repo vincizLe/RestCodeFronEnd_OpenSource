@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
 import { HttpClient} from '@angular/common/http';
+import {Consultant} from '../../model/consultant';
 
 @Component({
   selector: 'app-profile-consultant',
@@ -10,7 +11,7 @@ import { HttpClient} from '@angular/common/http';
 export class ProfileConsultantComponent implements OnInit {
 
   id = 0;
-  sourceConsultant: {};
+  sourceConsultant = new Consultant();
   constructor(private ruta: ActivatedRoute, private http: HttpClient) {
     this.ruta.params.subscribe(param => {
       this.id = param.id;
@@ -20,8 +21,8 @@ export class ProfileConsultantComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.http.get(`https://restcodewebapplication.azurewebsites.net/api/consultants/${this.id}`)
-      .subscribe((data: any[]) => this.sourceConsultant = data);
+    this.http.get(`https://cors-anywhere.herokuapp.com/https://protected-hollows-40842.herokuapp.com/api/consultants/${this.id}`)
+      .subscribe((data: any) => this.sourceConsultant = data);
   }
 
 }
