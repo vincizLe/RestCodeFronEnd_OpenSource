@@ -29,7 +29,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { ProductsComponent } from './pages/products/products.component';
 import { ProfileConsultantComponent } from './pages/profile-consultant/profile-consultant.component';
 import {MatListModule} from '@angular/material/list';
-
+import { RestaurantsProfileComponent } from './pages/restaurants-profile/restaurants-profile.component';
+import { RestaurantsEditComponent } from './pages/restaurants-edit/restaurants-edit.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,9 @@ import {MatListModule} from '@angular/material/list';
     SearchComponent,
     SearchPipe,
     ProductsComponent,
-    ProfileConsultantComponent
+    ProfileConsultantComponent,
+    RestaurantsProfileComponent,
+    RestaurantsEditComponent,
   ],
   imports: [
     BrowserModule,

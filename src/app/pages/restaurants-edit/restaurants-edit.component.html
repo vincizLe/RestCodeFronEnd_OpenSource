@@ -1,0 +1,28 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title> Editar Restaurante </mat-card-title>
+    <mat-card-subtitle> </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-grid-list cols="2" rowHeight="100px">
+
+      <form (submit)="onSubmit()" #restaurantForm="ngForm">
+        <mat-form-field>
+          <mat-label> Nombre del Restaurante </mat-label>
+          <input matInput placeholder="NombreRes" name="nombre-res" required [(ngModel)]="restaurantData.name">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label> Direccion del Restaurante </mat-label>
+          <input matInput placeholder="DireccionRes" name="direcc-res" required [(ngModel)]="restaurantData.address">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label> Telefono del Restaurante </mat-label>
+          <input matInput placeholder="TelefonoRes" name="telefono-res" required [(ngModel)]="restaurantData.phoneNumber">
+        </mat-form-field>
+          <button mat-button color="primary" (click)="updateRestaurant()">Editar</button>
+      </form>
+
+    </mat-grid-list>
+      <button mat-flat-button color="warn" (click) ="navigateToRestaurantProfile()"> Volver </button>
+  </mat-card-content>
+</mat-card>

@@ -4,6 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import {Appointment} from '../model/appointment';
 import {catchError, retry} from 'rxjs/operators';
 import {Product} from '../model/product';
+import {Restaurants} from '../model/restaurants';
 
 @Injectable({
   providedIn: 'root'
@@ -55,7 +56,7 @@ export class HttpDataService {
   }
   // Create Product
   createItemP(item): Observable<Product> {
-    return this.http.post<Product>(this.basePath, JSON.stringify(item), this.httpOptions)
+    return this.http.post<Product>(`${this.basePath}`, JSON.stringify(item), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
   // Get Product by Id
@@ -78,4 +79,15 @@ export class HttpDataService {
     return this.http.delete<Product>(`${this.basePath}/${id}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
+  // Get Restaurant
+  getRestaurantById(id: string): Observable<Restaurants> {
+    const url = this.basePath + '/restaurants/' + id;
+    return this.http.get<Restaurants>(url);
+  }
+  // Update Restaurant
+  updateRestaurantById(id, item): Observable<Restaurants>{
+    return this.http.put<Restaurants>(`${this.basePath}/restaurants/${id}`, JSON.stringify(item), this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
 }
