@@ -15,7 +15,7 @@
           <p>{{consutant.email}}</p>
         </mat-card-content>
         <mat-card-actions>
-          <button> Ver Perfil</button>
+          <button [routerLink]="['/profile',consutant.id]"> Ver Perfil</button>
         </mat-card-actions>
       </mat-card>
     </div>

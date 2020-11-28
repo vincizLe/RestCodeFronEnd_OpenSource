@@ -27,6 +27,9 @@ import { SearchPipe } from './pipes/search.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { ProductsComponent } from './pages/products/products.component';
+import { ProfileConsultantComponent } from './pages/profile-consultant/profile-consultant.component';
+import {MatListModule} from '@angular/material/list';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +39,8 @@ import { ProductsComponent } from './pages/products/products.component';
     SearchConsultantsComponent,
     SearchComponent,
     SearchPipe,
-    ProductsComponent
+    ProductsComponent,
+    ProfileConsultantComponent
   ],
   imports: [
     BrowserModule,
@@ -59,6 +63,7 @@ import { ProductsComponent } from './pages/products/products.component';
     ReactiveFormsModule,
     NgxPaginationModule,
     MatSidenavModule,
+    MatListModule,
   ],
   providers: [
     MatDatepickerModule,
