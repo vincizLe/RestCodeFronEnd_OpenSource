@@ -15,10 +15,11 @@ export class HomeComponent implements OnInit {
   navigateToAppointments = () => {
     this.router.navigate (['/appointments']);
   }
+  navigateToRestaurant = () => {
+    this.router.navigate (['/restaurants-profile']);
+  }
   navigateToProducts = () => {
-    this.router.navigate(['/products']);
+    this.router.navigate (['/products']);
   }
-  navigateToRestaurantProfile = () => {
-    this.router.navigate(['/restaurants-profile']);
-  }
+
 }

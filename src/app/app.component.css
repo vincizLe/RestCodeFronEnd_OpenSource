@@ -1,5 +1,10 @@
 mat-toolbar{
   background: #1BD698;
+  color: #FFFFFF;
+}
+#nav_box{
+  width: 1200px;
+  margin: auto;
 }
 #nav{
   float: right;

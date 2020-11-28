@@ -5,6 +5,10 @@ import {Appointment} from '../model/appointment';
 import {catchError, retry} from 'rxjs/operators';
 import {Product} from '../model/product';
 import {Restaurants} from '../model/restaurants';
+import {LoginOwner} from '../model/login-owner';
+import {LoginConsultant} from '../model/login-consultant';
+import {Owner} from '../model/owner';
+import {Consultant} from '../model/consultant';
 
 @Injectable({
   providedIn: 'root'
@@ -29,9 +33,27 @@ export class HttpDataService {
     }
     return throwError('Something happened with request, please try again later.');
   }
+  // Get All Owners for login
+  getListOwners_Login(): Observable<LoginOwner[]>{
+    return this.http.get<LoginOwner[]>(`https://restcodewebapplication.azurewebsites.net/api/owners`);
+  }
+  // Get All Consultants for login
+  getListConsultants_Login(): Observable<LoginConsultant[]>{
+    return this.http.get<LoginConsultant[]>(`https://restcodewebapplication.azurewebsites.net/api/consultants`);
+  }
+  // Create Owner
+  createNewOwner(item): Observable<Owner> {
+    return this.http.post<Owner>(`${this.basePath}/plans/1/owners`, JSON.stringify(item), this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+  // Create Consultant
+  createNewConsultant(item): Observable<Consultant> {
+    return this.http.post<Consultant>(`${this.basePath}/plans/2/consultants`, JSON.stringify(item), this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
   // Create Appointment
   createItem(item): Observable<Appointment> {
-    return this.http.post<Appointment>(this.basePath, JSON.stringify(item), this.httpOptions)
+    return this.http.post<Appointment>(`${this.basePath}/owners/1/consultants/2/appointments`, JSON.stringify(item), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
   // Get Appointment by Id

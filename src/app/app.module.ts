@@ -20,7 +20,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { HomeComponent } from './pages/home/home.component';
+import { HomeComponent } from './pages/home-owner/home.component';
 import { SearchConsultantsComponent } from './pages/search-consultants/search-consultants.component';
 import { SearchComponent } from './pages/search/search.component';
 import { SearchPipe } from './pipes/search.pipe';
@@ -31,6 +31,10 @@ import { ProfileConsultantComponent } from './pages/profile-consultant/profile-c
 import {MatListModule} from '@angular/material/list';
 import { RestaurantsProfileComponent } from './pages/restaurants-profile/restaurants-profile.component';
 import { RestaurantsEditComponent } from './pages/restaurants-edit/restaurants-edit.component';
+import {LoginComponent} from './pages/login/login.component';
+import {SignInComponent} from './pages/sign-in/sign-in.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import {HomeConsultantComponent} from './pages/home-consultant/home-consultant.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +48,9 @@ import { RestaurantsEditComponent } from './pages/restaurants-edit/restaurants-e
     ProfileConsultantComponent,
     RestaurantsProfileComponent,
     RestaurantsEditComponent,
+    LoginComponent,
+    SignInComponent,
+    HomeConsultantComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +64,7 @@ import { RestaurantsEditComponent } from './pages/restaurants-edit/restaurants-e
     FormsModule,
     MatTableModule,
     MatIconModule,
+    MatTabsModule,
     MatToolbarModule,
     MatInputModule,
     MatButtonModule,
