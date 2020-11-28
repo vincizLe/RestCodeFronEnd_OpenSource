@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'sales'`, () => {
+  it(`should have as title 'restcode-open-source'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('sales');
+    expect(app.title).toEqual('restcode-open-source');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('sales app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('restcode-open-source app is running!');
   });
 });

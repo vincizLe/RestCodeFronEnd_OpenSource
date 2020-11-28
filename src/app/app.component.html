@@ -1,11 +1,14 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <span>Restcode</span>
-    <span class="default-spacer"></span>
-    <div>
-      <a mat-flat-button color="primary" routerLink="/sales" routerLinkActive="active">Sales</a>
-      <a mat-flat-button color="primary" routerLink="/sales-report" routerLinkActive="active">Sales Report</a>
-    </div>
-  </mat-toolbar-row>
+<mat-toolbar>
+  <button >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>RestCode</span>
+  <div id="nav">
+    <div class="sub" routerLink="">Home</div>
+    <div class="sub" routerLink="appointments">Appointment</div>
+    <div class="sub" routerLink="search-consultants">Consultants</div>
+    <div class="sub" routerLink="products">Products</div>
+  </div>
 </mat-toolbar>
 <router-outlet></router-outlet>
+

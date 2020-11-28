@@ -1,0 +1,24 @@
+<div>
+  <app-search (search)="handleSearch($event)"></app-search>
+</div>
+<mat-drawer-container>
+  <div>
+    <div class="container">
+      <mat-card class="restaurant-card" *ngFor="let consutant of sourcesRestaurants | search: filtroValor
+        | paginate: {itemsPerPage: 8, currentPage: p}">
+        <mat-card-header>
+          <mat-card-title>{{consutant.firstName + ' '+ consutant.lastName}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="https://arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/UOT7XDVZCZGT3OX3ICGJWPFNPA.jpg">
+        <mat-card-content>
+          <p>{{consutant.cellphone}}</p>
+          <p>{{consutant.email}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button> Ver Perfil</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</mat-drawer-container>

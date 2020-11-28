@@ -1,11 +1,11 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import {MatTabsModule} from '@angular/material/tabs';
 import {MatInputModule} from '@angular/material/input';
 import {SelectionModel} from '@angular/cdk/collections';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 
+
 import { NgForm } from '@angular/forms';
-import { Sale } from '../../models/sale';
+import { Sale } from '../../model/sale';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -20,10 +20,9 @@ export interface Product {
 }
 
 const ELEMENT_DATA: Product[] = [
-  {id: 1, name: 'Arroz con Pollo', category: 'Platos de Fondo', precio: 25 },
-  {id: 2, name: 'Cebiche', category: 'Marinos', precio: 20 },
-  {id: 3, name: 'Causa Rellena', category: 'Entradas', precio: 10 },
-  {id: 4, name: 'Lomo Saltado', category: 'Platos de Fondo', precio: 25 }
+  {id: 1, name: 'Ceviche', category: '', precio: 10 },
+  {id: 2, name: 'causa', category: '', precio: 25 },
+  {id: 3, name: 'Pachamanca', category: '', precio: 35 },
 ];
 
 @Component({
@@ -32,9 +31,14 @@ const ELEMENT_DATA: Product[] = [
   styleUrls: ['./sales.component.css']
 })
 export class SalesComponent implements OnInit, AfterViewInit, MatInputModule, MatCheckboxModule {
+  @ViewChild('saleForm', {static: false})
+  saleForm: NgForm;
+  saleData: Sale;
   displayedColumns: string[] = ['select', 'id', 'name', 'category', 'precio'];
   dataSource = new MatTableDataSource<Product>(ELEMENT_DATA);
   selection = new SelectionModel<Product>(true, []);
+  value = 'Cantidad';
+
 
   /** Whether the number of selected elements matches the total number of rows. */
   isAllSelected() {

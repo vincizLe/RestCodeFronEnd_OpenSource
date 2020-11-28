@@ -1,3 +1,21 @@
-.default-spacer {
-  flex: 1 1 auto;
+mat-toolbar{
+  background: #1BD698;
+}
+#nav{
+  float: right;
+  right: 10px;
+  position: absolute;
+  display: flex;
+}
+.sub{
+  border: none;
+  background: #1BD698;
+  color: #fff;
+  margin: auto ;
+  padding: 16px 10px;
+  cursor: pointer;
+}
+.sub:hover{
+  background: #FFF;
+  color: #1BD698;
 }

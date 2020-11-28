@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "sales": {
+    "restcode-open-source": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/sales",
+            "outputPath": "dist/restcode-open-source",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "sales:build"
+            "browserTarget": "restcode-open-source:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "sales:build:production"
+              "browserTarget": "restcode-open-source:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "sales:build"
+            "browserTarget": "restcode-open-source:build"
           }
         },
         "test": {
@@ -111,16 +111,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "sales:serve"
+            "devServerTarget": "restcode-open-source:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "sales:serve:production"
+              "devServerTarget": "restcode-open-source:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "sales"
+  "defaultProject": "restcode-open-source",
+  "cli": {
+    "analytics": "60e9501c-5649-4c6c-8f42-689c2f873e71"
+  }
 }
