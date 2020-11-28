@@ -4,12 +4,14 @@ import {HomeComponent} from './pages/home/home.component';
 import {AppointmentsComponent} from './pages/appointments/appointments.component';
 import {SearchConsultantsComponent} from './pages/search-consultants/search-consultants.component';
 import {ProductsComponent} from './pages/products/products.component';
+import {RestaurantsProfileComponent} from './pages/restaurants-profile/restaurants-profile.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'appointments', component: AppointmentsComponent },
   { path: 'search-consultants', component: SearchConsultantsComponent },
-  { path: 'products', component: ProductsComponent}
+  { path: 'products', component: ProductsComponent},
+  { path: 'restaurants-profile', component: RestaurantsProfileComponent}
 ];
 
 @NgModule({

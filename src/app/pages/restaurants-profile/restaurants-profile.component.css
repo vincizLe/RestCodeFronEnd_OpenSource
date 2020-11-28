@@ -1,0 +1,75 @@
+body{
+  background: #ededed;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  user-select: none;
+  margin: 0;
+}
+img{
+  width: 400px;
+  height: 200px;
+  align-self: center;
+  block-size: border-box;
+  margin: 170px;
+}
+mat-card{
+  margin: 30px 50px;
+  align-content: center;
+}
+mat-card-header{
+  text-align: center;
+  font-weight: bolder;
+  font-size: 180%;
+  font-family:"Calibri","monospace", sans-serif;
+}
+mat-card-title{
+  text-align: center;
+  font-weight: bolder;
+  font-size: 180%;
+  font-family:"Arial", sans-serif;
+}
+mat-button-toggle{
+  align-self: center;
+}
+
+.example-card {
+  max-width: 400px;
+}
+.model-card {
+  width: 800px;
+  height: 400px;
+  margin: 40px;
+  border-radius: 8px;
+  box-snap: center;
+  box-sizing: border-box;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+}
+.model-card2{
+  width: 800px;
+  height: 600px;
+  box-sizing: border-box;
+}
+.align-left {
+  font-size: 5.5em;
+  float: left;
+  text-align: left;
+}
+.align-center {
+  target-position: front;
+  text-align: center;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+
+}
+
+.align-right {
+  float: right;
+  text-align: right;
+}
+
+.profile-picture {
+  width: 30%;
+  height: 30%;
+  border-radius: 80%;
+  border: 1px solid #949599;
+  position: center;
+}
+

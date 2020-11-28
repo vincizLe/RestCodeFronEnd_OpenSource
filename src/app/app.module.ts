@@ -27,6 +27,7 @@ import { SearchPipe } from './pipes/search.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { ProductsComponent } from './pages/products/products.component';
+import { RestaurantsProfileComponent } from './pages/restaurants-profile/restaurants-profile.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ProductsComponent } from './pages/products/products.component';
     SearchConsultantsComponent,
     SearchComponent,
     SearchPipe,
-    ProductsComponent
+    ProductsComponent,
+    RestaurantsProfileComponent
   ],
   imports: [
     BrowserModule,
