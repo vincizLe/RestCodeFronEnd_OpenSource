@@ -34,7 +34,7 @@ export class RestaurantsProfileComponent implements OnInit {
       console.error(err);
     });
   }
-  navigateToRestaurantEdit = () => {
-    this.router.navigate(['/restaurants-edit']);
+  navigateToRestaurantEdit = (id) => {
+    this.router.navigate([`/restaurants-edit/${id}`]);
   }
 }

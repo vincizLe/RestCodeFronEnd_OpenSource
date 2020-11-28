@@ -18,9 +18,13 @@ export class RestaurantsEditComponent implements OnInit {
   dataSource = new MatTableDataSource();
   @ViewChild(MatTableDataSource) sort: MatSort;
   isEditMode = false;
+  id = 0;
 
   constructor(private httpDataServive: HttpDataService, private route: ActivatedRoute, private router: Router) {
     this.restaurantData = {} as Restaurants;
+    this.route.params.subscribe(param => {
+      this.id = param.id;
+    });
   }
 
   ngOnInit(): void {
@@ -33,8 +37,7 @@ export class RestaurantsEditComponent implements OnInit {
     this.restaurantForm.resetForm();
   }
   updateRestaurant(): void{
-    this.restaurantData.id = 4;
-    this.httpDataServive.updateRestaurantById(this.restaurantData.id, this.restaurantData)
+    this.httpDataServive.updateRestaurantById(this.id, this.restaurantData)
       .subscribe((response: any) => {
         this.dataSource.data = this.dataSource.data.map((o: Restaurants) => {
           if (o.id === response.id) {
@@ -53,7 +56,7 @@ export class RestaurantsEditComponent implements OnInit {
       console.log('Invalid Data');
     }
   }
-  navigateToRestaurantProfile = () => {
-    this.router.navigate(['/restaurants-profile']);
+  navigateToRestaurantProfile = (id) => {
+    this.router.navigate([`/restaurants-profile/${id}`]);
   }
 }
