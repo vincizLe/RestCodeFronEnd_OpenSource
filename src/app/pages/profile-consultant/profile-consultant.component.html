@@ -20,19 +20,19 @@
         <mat-card-content>
           <mat-list>
             <mat-list-item>
-              Nombre: asdasdasdasdasdadasdsadasdadasdasdasd
+              Nombre : {{sourceConsultant.names}}
             </mat-list-item>
             <mat-list-item>
-              Edad:
+              Apellido : {{sourceConsultant.surnames}}
             </mat-list-item>
             <mat-list-item>
-              Telefono:
+              Telefono : {{sourceConsultant.phone}}
             </mat-list-item>
             <mat-list-item>
-              Email:
+              Email : {{sourceConsultant.email}}
             </mat-list-item>
             <mat-list-item>
-              Educacion:
+              Educacion : {{sourceConsultant.linkedln}}
             </mat-list-item>
           </mat-list>
         </mat-card-content>
@@ -44,20 +44,20 @@
       <mat-card class="comment-card">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>name:</mat-card-title>
+          <mat-card-title>name : {{sourceConsultant.names}}</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <p>fafdsfsdfsdfsdfsdfsdfsdfsfsfsdfdsfsdfsdfsdfsdfsdfsfsdfsdfsdfsdfsdfsdf</p>
+          <p>Exelente trabajo</p>
         </mat-card-content>
       </mat-card>
       <mat-divider [vertical]="true"></mat-divider>
       <mat-card class="comment-card">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>name:</mat-card-title>
+          <mat-card-title>name:{{sourceConsultant.names}}</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <h3>fafdsfsdfsdfsdfsdfsdfsdfsfsfsdfdsfsdfsdfsdfsdfsdfsfsdfsdfsdfsdfsdfsdf</h3>
+          <h3>Me ayudo entender mejor mi negocio</h3>
         </mat-card-content>
       </mat-card>
     </div>
