@@ -1,0 +1,26 @@
+<!-- login.component.html -->
+
+<div class="login">
+  <form  class="custom-form" method="post">
+    <h1>Iniciar sesión</h1>
+      <input
+        type="email"
+        name="email"
+        placeholder="Correo"
+        required
+        #email
+      />
+
+    <input
+      type="password"
+      name="password"
+      placeholder="Constraseña"
+      required
+    />
+    <input type="submit" (click)="login(email.value)" value="Log in" id="button">
+    <p (click)="navigateToSignIn()">Registrarse</p>
+  </form>
+  <div>
+
+  </div>
+</div>

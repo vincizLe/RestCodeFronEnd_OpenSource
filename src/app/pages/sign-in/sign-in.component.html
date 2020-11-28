@@ -1,0 +1,93 @@
+<!-- register.component.html -->
+
+<mat-tab-group>
+  <mat-tab label="Popietario">
+    <div class="register">
+      <form  class="custom-form" #registerOwnerForm="ngForm">
+        <h1>Register</h1>
+        <input
+          name="names"
+          [(ngModel)]="ownerData.names"
+          placeholder="Nombre"
+        />
+        <input
+          [(ngModel)]="ownerData.surnames"
+          name="surnames"
+          placeholder="Apellido"
+          required="required"
+        />
+        <input
+          [(ngModel)]="ownerData.phone"
+          name="phone"
+          placeholder="Número de celular"
+          required="required"
+        />
+        <input
+          [(ngModel)]="ownerData.ruc"
+          name="ruc"
+          placeholder="RUC"
+          required="required"
+        />
+        <input
+          [(ngModel)]="ownerData.email"
+          name="email"
+          placeholder="Email"
+          required="required"
+        />
+        <input
+          type="password"
+          [(ngModel)]="ownerData.password"
+          name="password"
+          placeholder="Password"
+          required="required"
+        />
+        <button type="submit" (click)="addOwner()">Register</button>
+      </form>
+    </div>
+  </mat-tab>
+  <mat-tab label="Consultor">
+    <div class="register">
+      <form  class="custom-form" #registerOwnerForm="ngForm">
+        <h1>Register</h1>
+        <input
+          name="names"
+          [(ngModel)]="consultantData.names"
+          placeholder="Nombre"
+        />
+        <input
+          [(ngModel)]="consultantData.surnames"
+          name="surnames"
+          placeholder="Apellido"
+          required="required"
+        />
+        <input
+          [(ngModel)]="consultantData.phone"
+          name="phone"
+          placeholder="Número de celular"
+          required="required"
+        />
+        <input
+          [(ngModel)]="consultantData.linkedln"
+          name="linkedln"
+          placeholder="linkedln"
+          required="required"
+        />
+        <input
+          [(ngModel)]="consultantData.email"
+          name="email"
+          placeholder="Email"
+          required="required"
+        />
+        <input
+          type="password"
+          [(ngModel)]="consultantData.password"
+          name="password"
+          placeholder="Password"
+          required="required"
+        />
+        <button type="submit" (click)="addConsultant()">Register</button>
+      </form>
+    </div>
+  </mat-tab>
+</mat-tab-group>
+
