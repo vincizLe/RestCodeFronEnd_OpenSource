@@ -28,6 +28,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { ProductsComponent } from './pages/products/products.component';
 import { RestaurantsProfileComponent } from './pages/restaurants-profile/restaurants-profile.component';
+import { RestaurantsEditComponent } from './pages/restaurants-edit/restaurants-edit.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { RestaurantsProfileComponent } from './pages/restaurants-profile/restaur
     SearchComponent,
     SearchPipe,
     ProductsComponent,
-    RestaurantsProfileComponent
+    RestaurantsProfileComponent,
+    RestaurantsEditComponent
   ],
   imports: [
     BrowserModule,

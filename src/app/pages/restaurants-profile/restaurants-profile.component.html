@@ -6,7 +6,7 @@
     </mat-card-content>
     <mat-card-subtitle>Direccion : {{restaurantData.address}}</mat-card-subtitle>
     <mat-card-subtitle>Telefono : {{restaurantData.phoneNumber}}</mat-card-subtitle>
-    <button mat-flat-button color="primary">
+    <button mat-flat-button color="primary" (click)="navigateToRestaurantEdit()">
       Editar Informacion
     </button>
   </mat-card>

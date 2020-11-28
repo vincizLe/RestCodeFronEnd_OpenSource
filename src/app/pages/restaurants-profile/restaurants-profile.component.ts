@@ -3,6 +3,7 @@ import {HttpDataService} from '../../services/http-data.service';
 import {Restaurants} from '../../model/restaurants';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-restaurants-profile',
@@ -15,16 +16,11 @@ export class RestaurantsProfileComponent implements OnInit {
   name: string;
   address: string;
   phoneNumber: string;
-  dataSource = new MatTableDataSource();
-  @ViewChild(MatSort) sort: MatSort;
-  errorMessage: string;
-
-  constructor(private httpDataService: HttpDataService) {
+  constructor(private httpDataService: HttpDataService, private route: ActivatedRoute, private router: Router) {
     this.restaurantData = {} as Restaurants;
   }
 
   ngOnInit(): void {
-    this.dataSource.sort = this.sort;
     this.getRestaurantById(4);
   }
   getRestaurantById(id): void{
@@ -33,5 +29,8 @@ export class RestaurantsProfileComponent implements OnInit {
     }, (err: any) => {
       console.error(err);
     });
+  }
+  navigateToRestaurantEdit = () => {
+    this.router.navigate(['/restaurants-edit']);
   }
 }
