@@ -35,6 +35,8 @@ import {LoginComponent} from './pages/login/login.component';
 import {SignInComponent} from './pages/sign-in/sign-in.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {HomeConsultantComponent} from './pages/home-consultant/home-consultant.component';
+import {SaleDetailsComponent} from './pages/sale-details/sale-details.component';
+import {SalesComponent} from './pages/sales/sales.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import {HomeConsultantComponent} from './pages/home-consultant/home-consultant.c
     RestaurantsEditComponent,
     LoginComponent,
     SignInComponent,
-    HomeConsultantComponent
+    HomeConsultantComponent,
+    SaleDetailsComponent,
+    SalesComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,7 +78,7 @@ import {HomeConsultantComponent} from './pages/home-consultant/home-consultant.c
     ReactiveFormsModule,
     NgxPaginationModule,
     MatSidenavModule,
-    MatListModule,
+    MatListModule
   ],
   providers: [
     MatDatepickerModule,

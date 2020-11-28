@@ -18,10 +18,14 @@ export class RestaurantsProfileComponent implements OnInit {
   phoneNumber: string;
   constructor(private httpDataService: HttpDataService, private route: ActivatedRoute, private router: Router) {
     this.restaurantData = {} as Restaurants;
+    this.route.params.subscribe(param => {
+      this.id = param.id;
+      console.log(param.id);
+    });
   }
 
   ngOnInit(): void {
-    this.getRestaurantById(4);
+    this.getRestaurantById(this.id);
   }
   getRestaurantById(id): void{
     this.httpDataService.getRestaurantById(id).subscribe((userFromtheAPI: Restaurants) => {

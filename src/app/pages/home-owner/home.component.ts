@@ -7,8 +7,13 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  id = 0;
+  constructor(private route: ActivatedRoute, private router: Router) {
+    this.route.params.subscribe(param => {
+      this.id = param.id;
+      console.log(param.id);
+    });
+  }
 
   ngOnInit(): void {
   }
@@ -16,10 +21,19 @@ export class HomeComponent implements OnInit {
     this.router.navigate (['/appointments']);
   }
   navigateToRestaurant = () => {
-    this.router.navigate (['/restaurants-profile']);
+    this.router.navigate ([`/restaurants-profile/${this.id}`]);
   }
   navigateToProducts = () => {
     this.router.navigate (['/products']);
+  }
+  navigateToConsultants = () => {
+    this.router.navigate (['/search-consultants']);
+  }
+  navigateToSales = () => {
+    this.router.navigate (['/sales']);
+  }
+  navigateToReports = () => {
+    this.router.navigate (['/sale-details']);
   }
 
 }

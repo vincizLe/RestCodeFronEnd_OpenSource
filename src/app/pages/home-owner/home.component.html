@@ -11,13 +11,19 @@
       <mat-card-title>Gestionar productos</mat-card-title>
     </mat-card-content>
   </mat-card>
-  <mat-card class="example-card">
+  <mat-card class="example-card" (click)="navigateToConsultants()">
+    <img mat-card-image src="https://consultoriaortiz.com/wp-content/uploads/2018/03/Fotolia_178239513_Subscription_Monthly_M.jpg" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <mat-card-title>Buscar consultores</mat-card-title>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="example-card" (click)="navigateToSales()">
     <img mat-card-image src="https://escuela-emprendedores.alegra.com/wp-content/uploads/2018/10/aumentar-ventas.jpg" alt="Photo of a Shiba Inu">
     <mat-card-content>
       <mat-card-title>Ventas</mat-card-title>
     </mat-card-content>
   </mat-card>
-  <mat-card class="example-card">
+  <mat-card class="example-card" (click)="navigateToReports()">
     <img mat-card-image src="https://escuela-emprendedores.alegra.com/wp-content/uploads/2018/12/reporte-de-ventas.png" alt="Photo of a Shiba Inu">
     <mat-card-content>
       <mat-card-title>Reporte de ventas</mat-card-title>

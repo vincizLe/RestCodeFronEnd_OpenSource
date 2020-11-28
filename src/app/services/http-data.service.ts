@@ -9,6 +9,7 @@ import {LoginOwner} from '../model/login-owner';
 import {LoginConsultant} from '../model/login-consultant';
 import {Owner} from '../model/owner';
 import {Consultant} from '../model/consultant';
+import {SaleDetail} from '../model/sale-detail';
 
 @Injectable({
   providedIn: 'root'
@@ -111,5 +112,9 @@ export class HttpDataService {
     return this.http.put<Restaurants>(`${this.basePath}/restaurants/${id}`, JSON.stringify(item), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
-
+  // Get SaleDetails Data
+  getListS(): Observable<SaleDetail>{
+    return this.http.get<SaleDetail>(`${this.basePath}/sales/1/sale-details`)
+      .pipe(retry(2), catchError(this.handleError));
+  }
 }
