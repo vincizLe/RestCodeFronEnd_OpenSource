@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {HttpDataService} from '../../services/http-data.service';
 import {Restaurants} from '../../model/restaurants';
+import {MatTableDataSource} from '@angular/material/table';
+import {MatSort} from '@angular/material/sort';
 
 @Component({
   selector: 'app-restaurants-profile',
@@ -13,6 +15,8 @@ export class RestaurantsProfileComponent implements OnInit {
   name: string;
   address: string;
   phoneNumber: string;
+  dataSource = new MatTableDataSource();
+  @ViewChild(MatSort) sort: MatSort;
   errorMessage: string;
 
   constructor(private httpDataService: HttpDataService) {
@@ -20,15 +24,14 @@ export class RestaurantsProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getRestaurantById(1);
+    this.dataSource.sort = this.sort;
+    this.getRestaurantById(4);
   }
   getRestaurantById(id): void{
-    this.httpDataService.getItemRes(id).subscribe(
-      restaurantData => {
-        this.name = restaurantData.name;
-        this.address = restaurantData.address;
-        this.phoneNumber = restaurantData.phoneNumber;
-      },
-      error => this.errorMessage = error as any);
+    this.httpDataService.getRestaurantById(id).subscribe((userFromtheAPI: Restaurants) => {
+      this.restaurantData = userFromtheAPI;
+    }, (err: any) => {
+      console.error(err);
+    });
   }
 }

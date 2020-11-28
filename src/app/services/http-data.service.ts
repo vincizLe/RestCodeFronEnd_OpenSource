@@ -84,5 +84,10 @@ export class HttpDataService {
     return this.http.get<Restaurants>( `${this.basePath}/restaurants/${id}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
+  // Get Restaurant 2
+  getRestaurantById(id: string): Observable<Restaurants> {
+    const url = this.basePath + '/restaurants/' + id;
+    return this.http.get<Restaurants>(url);
+  }
 
 }
